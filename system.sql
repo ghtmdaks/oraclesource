@@ -47,3 +47,8 @@ grant resource, create session, create table to c##test2;
 -c##test2 에게 users 테이블 공간 2M(특정공간용량 만큼만) 할당
 alter user c##test2 quota 2M on users;
 
+drop user c##test2 cascade; 
+
+create user c##java identified by 12345;
+alter user c##java quota 30M on users;
+grant resource, connect to c##java;
